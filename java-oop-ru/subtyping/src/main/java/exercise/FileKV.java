@@ -11,6 +11,7 @@ class FileKV implements KeyValueStorage {
     FileKV(String path, Map<String, String> data) {
         this.path = path;
         this.data = new HashMap<>(data);
+        Utils.writeFile(path, Utils.serialize(data));
     }
 
     @Override
