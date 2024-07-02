@@ -1,10 +1,9 @@
 package exercise;
 
 import java.util.Map;
-import java.util.HashMap;
 
 // BEGIN
-public class InMemoryKV implements KeyValueStorage{
+public class InMemoryKV implements KeyValueStorage {
     Map<String, String> values;
 
     public InMemoryKV(Map<String, String> values) {
