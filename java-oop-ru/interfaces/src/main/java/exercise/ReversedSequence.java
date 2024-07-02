@@ -9,6 +9,11 @@ public class ReversedSequence implements CharSequence {
     }
 
     @Override
+    public String toString() {
+        return value;
+    }
+
+    @Override
     public int length() {
         return value.length();
     }
