@@ -1,5 +1,6 @@
 package exercise;
 
+import java.util.HashMap;
 import java.util.Map;
 
 // BEGIN
@@ -27,7 +28,7 @@ public class InMemoryKV implements KeyValueStorage {
 
     @Override
     public Map<String, String> toMap() {
-        return Map.copyOf(values);
+        return new HashMap<>(values);
     }
 }
 // END
