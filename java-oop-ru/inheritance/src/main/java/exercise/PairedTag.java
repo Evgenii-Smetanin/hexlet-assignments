@@ -16,7 +16,7 @@ public class PairedTag extends Tag {
     }
 
     public String toString() {
-        return "<" + name + parseValues() + ">"
+        return "<" + name + parseValues() + ">" + body
                 + children.stream().map(Object::toString).collect(Collectors.joining())
                 + "</" + name + ">";
     }
