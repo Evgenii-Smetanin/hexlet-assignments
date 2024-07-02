@@ -5,9 +5,11 @@ import java.util.Map;
 // BEGIN
 class FileKV implements KeyValueStorage {
     private final String path;
+    private final Map<String, String> data;
 
-    FileKV(String path) {
+    FileKV(String path, Map<String, String> data) {
         this.path = path;
+        this.data = data;
     }
 
     @Override
