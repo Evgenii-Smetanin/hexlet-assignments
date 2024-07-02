@@ -1,7 +1,7 @@
 package exercise;
 
 // BEGIN
-public interface Home {
+public interface Home extends Comparable<Home>{
     double getArea();
 
     int compareTo(Home home);
