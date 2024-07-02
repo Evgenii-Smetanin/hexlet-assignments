@@ -4,7 +4,7 @@ import java.util.Map;
 
 // BEGIN
 public class InMemoryKV implements KeyValueStorage {
-    Map<String, String> values;
+    private Map<String, String> values;
 
     public InMemoryKV(Map<String, String> values) {
         this.values = values;
@@ -27,7 +27,7 @@ public class InMemoryKV implements KeyValueStorage {
 
     @Override
     public Map<String, String> toMap() {
-        return values;
+        return Map.copyOf(values);
     }
 }
 // END
