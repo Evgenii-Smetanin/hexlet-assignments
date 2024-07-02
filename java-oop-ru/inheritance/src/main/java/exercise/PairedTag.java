@@ -2,6 +2,7 @@ package exercise;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 // BEGIN
 public class PairedTag extends Tag {
@@ -15,7 +16,9 @@ public class PairedTag extends Tag {
     }
 
     public String toString() {
-        return "<" + name + parseValues() + ">" + children.stream().map(Object::toString) + "</" + name + ">";
+        return "<" + name + parseValues() + ">"
+                + children.stream().map(Object::toString).collect(Collectors.joining())
+                + "</" + name + ">";
     }
 }
 // END
