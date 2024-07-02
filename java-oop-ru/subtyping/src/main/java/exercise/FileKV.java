@@ -1,5 +1,6 @@
 package exercise;
 
+import java.util.HashMap;
 import java.util.Map;
 
 // BEGIN
@@ -9,7 +10,7 @@ class FileKV implements KeyValueStorage {
 
     FileKV(String path, Map<String, String> data) {
         this.path = path;
-        this.data = data;
+        this.data = new HashMap<>(data);
     }
 
     @Override
