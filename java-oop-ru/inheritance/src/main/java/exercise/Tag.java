@@ -4,8 +4,8 @@ import java.util.Map;
 
 // BEGIN
 public class Tag {
-    private String name;
-    private Map<String, String> attr;
+    protected String name;
+    protected Map<String, String> attr;
 
     public Tag() {
     }
