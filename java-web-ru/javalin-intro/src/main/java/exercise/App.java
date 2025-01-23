@@ -8,7 +8,7 @@ public final class App {
             config.bundledPlugins.enableDevLogging();
         });
         app.get("/welcome", ctx -> ctx.result("Welcome to Hexlet!"));
-        app.start(7070);
+        return app;
     }
 
     public static void main(String[] args) {
