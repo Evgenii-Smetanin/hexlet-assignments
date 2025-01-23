@@ -5,10 +5,12 @@ import io.javalin.Javalin;
 public final class App {
 
     public static Javalin getApp() {
-
-        // BEGIN
-        
-        // END
+        var app = Javalin.create(config -> {
+            config.bundledPlugins.enableDevLogging();
+        });
+        app.get("/phones", ctx -> ctx.json(Data.getPhones()));
+        app.post("/domains", ctx -> ctx.json(Data.getDomains()));
+        return app;
     }
 
     public static void main(String[] args) {
