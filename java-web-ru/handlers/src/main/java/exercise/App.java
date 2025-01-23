@@ -9,7 +9,7 @@ public final class App {
             config.bundledPlugins.enableDevLogging();
         });
         app.get("/phones", ctx -> ctx.json(Data.getPhones()));
-        app.post("/domains", ctx -> ctx.json(Data.getDomains()));
+        app.get("/domains", ctx -> ctx.json(Data.getDomains()));
         return app;
     }
 
