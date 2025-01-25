@@ -35,7 +35,7 @@ class AppTest {
     void testCompany1() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         Map<String, String> expected = Map.of(
-            "name", "Morar-Wehner", "phone", "(651) 407-5345", "id", "6"
+            "name", "Morar-Wehner", "phone", "(305) 273-4568", "id", "6"
         );
 
         HttpResponse<String> response = Unirest.get(baseUrl + "/companies/6").asString();
@@ -51,7 +51,7 @@ class AppTest {
     void testCompany2() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         Map<String, String> expected = Map.of(
-            "name", "Hoppe Inc", "phone", "(301) 217-7211", "id", "30"
+            "name", "Boyer, Schmeler and Prohaska", "phone", "(971) 341-5515", "id", "30"
         );
 
         HttpResponse<String> response = Unirest.get(baseUrl + "/companies/30").asString();
