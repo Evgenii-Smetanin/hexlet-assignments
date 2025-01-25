@@ -20,10 +20,6 @@ public final class App {
             var id = ctx.pathParamAsClass("id", Integer.class).get();
             Map<String, String> comp = null;
 
-            if (id > COMPANIES.size() - 1) {
-                throw new NotFoundResponse("Entity with id = " + id + " not found");
-            }
-
             for (var c : COMPANIES) {
                 if (c.get("id").equals(id)) {
                     comp = c;
@@ -32,7 +28,7 @@ public final class App {
             }
 
             if (comp == null) {
-                throw new NotFoundResponse("Entity with id = " + id + " not found");
+                throw new NotFoundResponse("Company not found");
             } else {
                 ctx.json(comp);
             }
