@@ -17,7 +17,7 @@ public final class App {
         });
 
         app.get("/companies/{id}", ctx -> {
-            var id = ctx.pathParam("id");
+            var id = ctx.pathParamAsClass("id", Integer.class);
             Map<String, String> comp = null;
 
             if (id > COMPANIES.size() - 1) {
