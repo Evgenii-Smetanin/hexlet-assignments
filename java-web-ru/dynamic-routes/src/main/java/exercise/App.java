@@ -21,7 +21,7 @@ public final class App {
             Map<String, String> comp = null;
 
             for (var c : COMPANIES) {
-                if (c.get("id").equals(id)) {
+                if (c.get("id").equals(String.valueOf(id))) {
                     comp = c;
                     break;
                 }
