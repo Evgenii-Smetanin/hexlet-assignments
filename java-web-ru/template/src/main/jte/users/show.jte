@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="mx-auto p-4 py-md-5">
-        <p>${user.getFirstName() + user.getLastName() + user.getEmail()}</p>
+        <p>${page.getUser().getFirstName() + page.getUser().getLastName() + page.getUser().getEmail()}</p>
 </div>
 </body>
 </html>
