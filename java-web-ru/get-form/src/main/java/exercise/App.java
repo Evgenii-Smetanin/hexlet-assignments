@@ -31,7 +31,7 @@ public final class App {
                 users = new ArrayList<>();
 
                 for (User u : USERS) {
-                    if (u.getFirstName().substring(0, term.length()).equals(term)) {
+                    if (u.getFirstName().substring(0, term.length()).equalsIgnoreCase(term)) {
                         users.add(u);
                     }
                 }
