@@ -2,8 +2,8 @@
 @param UserPage page
 
 @template.layout.page(
-content = @`
-<div>${user.getFirstName() + user.getLastName()}</div>
-<div>${user.getEmail()}</div>
-`
+    content = @`
+        <div>${page.getUser().getFirstName() + page.getUser().getLastName()}</div>
+        <div>${page.getUser().getEmail()}</div>
+    `
 )
