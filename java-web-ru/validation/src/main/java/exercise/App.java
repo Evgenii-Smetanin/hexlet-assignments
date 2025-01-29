@@ -55,7 +55,7 @@ public final class App {
                 ctx.redirect("/articles");
             } catch (ValidationException e) {
                 var page = new BuildArticlePage(rawTitle, rawContent, e.getErrors());
-                ctx.render("articles/build.jte", model("page", page));
+                ctx.render("articles/build.jte", model("page", page)).status(422);
             }
         });
         // END
