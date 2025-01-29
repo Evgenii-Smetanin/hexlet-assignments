@@ -1,15 +1,16 @@
 package exercise;
 
-import io.javalin.Javalin;
-import io.javalin.validation.ValidationException;
-import java.util.List;
-import exercise.model.Article;
 import exercise.dto.articles.ArticlesPage;
 import exercise.dto.articles.BuildArticlePage;
-import static io.javalin.rendering.template.TemplateUtil.model;
-import io.javalin.rendering.template.JavalinJte;
-
+import exercise.model.Article;
 import exercise.repository.ArticleRepository;
+import io.javalin.Javalin;
+import io.javalin.rendering.template.JavalinJte;
+import io.javalin.validation.ValidationException;
+
+import java.util.List;
+
+import static io.javalin.rendering.template.TemplateUtil.model;
 
 public final class App {
 
@@ -41,7 +42,8 @@ public final class App {
             try {
                 var title = ctx.formParamAsClass("title", String.class)
                         .check(value -> value.length() > 1, "Название не должно быть короче двух символов")
-                        .check(value -> ArticleRepository.findByTitle(value).isEmpty(), "Статья с таким названием уже существует")
+                        .check(value -> ArticleRepository.findByTitle(value).isEmpty(),
+                                "Статья с таким названием уже существует")
                         .get();
                 var content = ctx.formParamAsClass("content", String.class)
                         .check(value -> value.length() > 9, "Статья должна быть не короче 10 символов")
