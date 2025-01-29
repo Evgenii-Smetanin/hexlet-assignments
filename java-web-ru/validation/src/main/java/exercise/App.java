@@ -38,6 +38,8 @@ public final class App {
         });
 
         app.post("/articles", ctx -> {
+            var rawTitle = ctx.formParam("title");
+            var rawContent = ctx.formParam("content");
 
             try {
                 var title = ctx.formParamAsClass("title", String.class)
@@ -52,7 +54,7 @@ public final class App {
                 ArticleRepository.save(article);
                 ctx.redirect("/articles");
             } catch (ValidationException e) {
-                var page = new BuildArticlePage(title, content, e.getErrors());
+                var page = new BuildArticlePage(rawTitle, rawContent, e.getErrors());
                 ctx.render("articles/build.jte", model("page", page));
             }
         });
