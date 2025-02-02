@@ -4,7 +4,7 @@
 
 @template.layout.page(
 content = @`
-<h1>${post.getName()}</h1>
-<div>${post.getBody()}</div>
+<h1>${page.getPost().getName()}</h1>
+<div>${page.getPost().getBody()}</div>
 `
 )
