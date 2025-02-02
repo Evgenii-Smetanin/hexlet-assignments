@@ -11,6 +11,10 @@ public class NamedRoutes {
         return "/posts";
     }
 
+    public static String postsPagePath() {
+        return "/posts&page=";
+    }
+
     public static String postPath(Long id) {
         return postPath(String.valueOf(id));
     }
