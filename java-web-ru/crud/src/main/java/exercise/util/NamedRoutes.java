@@ -16,7 +16,7 @@ public class NamedRoutes {
     }
 
     public static String postsPagePath(String pageNum) {
-        return "/posts&page=" + pageNum;
+        return "/posts?page=" + pageNum;
     }
 
     public static String postPath(Long id) {
