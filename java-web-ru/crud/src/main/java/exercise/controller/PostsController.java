@@ -13,7 +13,7 @@ public class PostsController {
 
     // BEGIN
     public static void index(Context ctx) {
-        var pageNum = ctx.pathParamAsClass("page", Long.class).get();
+        var pageNum = ctx.pathParamAsClass("page", Integer.class).get();
         pageNum = pageNum == null ? 1 : pageNum;
         var posts = PostRepository.findAll(pageNum, 5);
         var page = new PostsPage(posts);
