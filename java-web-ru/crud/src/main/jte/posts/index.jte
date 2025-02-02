@@ -1,5 +1,6 @@
 @import exercise.dto.posts.PostsPage
 @import exercise.model.Post
+@import exercise.util.NamedRoutes
 @param PostsPage page
 @param Long pageNum
 
