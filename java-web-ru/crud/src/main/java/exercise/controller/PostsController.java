@@ -14,7 +14,7 @@ public class PostsController {
     // BEGIN
     public static void index(Context ctx) {
         var pageNum = ctx.pathParamAsClass("page", Long.class).get();
-        pageNum = pageNum == null? 1 : pageNum;
+        pageNum = pageNum == null ? 1 : pageNum;
         var posts = PostRepository.findAll(pageNum, 5);
         var page = new PostsPage(posts);
         ctx.render("posts/index.jte", model("page", page, "pageNum", pageNum));
