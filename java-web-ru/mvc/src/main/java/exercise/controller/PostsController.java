@@ -85,7 +85,7 @@ public class PostsController {
             ctx.redirect(NamedRoutes.postsPath());
 
         } catch (ValidationException e) {
-            var id = ctx.pathParamAsClass("id", Long.class).get();
+            var id = ctx.pathParamAsClass("id", String.class).get();
             var name = ctx.formParam("name");
             var body = ctx.formParam("body");
             var page = new EditPostPage(id, name, body, e.getErrors());
