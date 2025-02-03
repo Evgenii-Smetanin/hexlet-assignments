@@ -64,7 +64,7 @@ public class PostsController {
                 .orElseThrow(() -> new NotFoundResponse("Post not found"));
 
         var page = new EditPostPage();
-        page.setId(post.getId());
+        page.setId(post.getId().toString());
         ctx.render("posts/edit.jte", model("page", page));
     }
 
