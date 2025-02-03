@@ -60,7 +60,7 @@ public class PostsController {
     // BEGIN
     public static void edit(Context ctx) {
         var page = new EditPostPage();
-        page.setId(ctx.pathParamAsClass("id", Long.class).get());
+        page.setId(ctx.pathParamAsClass("id", String.class).get());
         ctx.render("posts/edit.jte", model("page", page));
     }
 
