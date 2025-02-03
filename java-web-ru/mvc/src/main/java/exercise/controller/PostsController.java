@@ -59,8 +59,12 @@ public class PostsController {
 
     // BEGIN
     public static void edit(Context ctx) {
+        var id = ctx.pathParamAsClass("id", Long.class).get();
+        var post = PostRepository.find(id)
+                .orElseThrow(() -> new NotFoundResponse("Post not found"));
+
         var page = new EditPostPage();
-        page.setId(ctx.pathParamAsClass("id", String.class).get());
+        page.setId(post.getId());
         ctx.render("posts/edit.jte", model("page", page));
     }
 
