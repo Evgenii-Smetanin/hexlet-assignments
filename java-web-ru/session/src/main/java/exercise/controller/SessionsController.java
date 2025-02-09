@@ -7,8 +7,6 @@ import exercise.util.NamedRoutes;
 import exercise.util.Security;
 import io.javalin.http.Context;
 
-import java.util.Collections;
-
 import static io.javalin.rendering.template.TemplateUtil.model;
 
 public class SessionsController {
@@ -38,9 +36,9 @@ public class SessionsController {
         }
     }
 
-        public static void destroy (Context ctx){
-            ctx.sessionAttribute("currentUser", null);
-            ctx.redirect(NamedRoutes.rootPath());
-        }
-        // END
+    public static void destroy(Context ctx) {
+        ctx.sessionAttribute("currentUser", null);
+        ctx.redirect(NamedRoutes.rootPath());
     }
+    // END
+}
