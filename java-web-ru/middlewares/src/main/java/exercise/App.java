@@ -31,7 +31,7 @@ public final class App {
         app.post(NamedRoutes.postPath("{id}"), PostsController::update);
 
         // BEGIN
-        app.before(ctx -> {
+        app.after(ctx -> {
             ctx.header(
                     "X-Response-Digest",
                     (DigestUtils.sha256Hex(ctx.body().getBytes(StandardCharsets.UTF_8))));
