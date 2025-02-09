@@ -9,6 +9,7 @@ import io.javalin.rendering.template.JavalinJte;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 public final class App {
 
@@ -34,7 +35,7 @@ public final class App {
         app.before(ctx -> {
             ctx.header(
                     "X-Response-Digest",
-                    DigestUtils.getSha256Digest().digest(ctx.body().getBytes(StandardCharsets.UTF_8)));
+                    Arrays.toString(DigestUtils.getSha256Digest().digest(ctx.body().getBytes(StandardCharsets.UTF_8))));
         });
         // END
 
