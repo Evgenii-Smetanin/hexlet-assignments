@@ -8,8 +8,6 @@ import io.javalin.rendering.template.JavalinJte;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-import java.nio.charset.StandardCharsets;
-
 public final class App {
 
     public static Javalin getApp() {
@@ -31,11 +29,9 @@ public final class App {
         app.post(NamedRoutes.postPath("{id}"), PostsController::update);
 
         // BEGIN
-        app.before(ctx -> {
-            ctx.header(
-                    "X-Response-Digest",
-                    (DigestUtils.sha256Hex(ctx.body())));
-        });
+        app.after(ctx -> ctx.header(
+                "X-Response-Digest",
+                DigestUtils.sha256Hex(ctx.body())));
         // END
 
         return app;
