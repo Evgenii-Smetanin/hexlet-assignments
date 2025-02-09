@@ -4,12 +4,12 @@
 
 @template.layout.page(
 content = @`
-    @if(page.getCurrentUser() != null)
-    <p>${page.getName()}</p>
-    <form action="${NamedRoutes.logoutPath()}" method="post">
-        <input type="submit" value="Выйти"/>
-    </form>
+    @if(page.getName() != null)
+        <p>${page.getName().toString()}</p>
+        <form action="${NamedRoutes.logoutPath()}" method="post">
+            <input type="submit" value="Выйти"/>
+        </form>
     @else
-    <a href="${NamedRoutes.logoinPath()}">Войти</a>
+        <a href="${NamedRoutes.buildSessionPath()}">Войти</a>
     @endif
 '
