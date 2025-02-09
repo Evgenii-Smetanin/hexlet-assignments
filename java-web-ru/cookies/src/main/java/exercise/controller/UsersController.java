@@ -7,6 +7,8 @@ import exercise.util.NamedRoutes;
 import exercise.util.Security;
 import io.javalin.http.Context;
 
+import io.javalin.http.NotFoundResponse;
+
 
 public class UsersController {
 
