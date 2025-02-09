@@ -35,7 +35,7 @@ public final class App {
         app.before(ctx -> {
             ctx.header(
                     "X-Response-Digest",
-                    Arrays.toString(DigestUtils.getSha256Digest().digest(ctx.body().getBytes(StandardCharsets.UTF_8))));
+                    (DigestUtils.sha256Hex(ctx.body().getBytes(StandardCharsets.UTF_8))));
         });
         // END
 
