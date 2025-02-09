@@ -33,7 +33,9 @@ public final class App {
 
         // BEGIN
         app.before(ctx -> {
-            ctx.header("X-Response-Digest", MessageDigest.getInstance("SHA-256").digest(ctx.body().getBytes(StandardCharsets.UTF_8)));
+            ctx.header(
+                    "X-Response-Digest",
+                    DigestUtils.getSha256Digest().digest(ctx.body().getBytes(StandardCharsets.UTF_8)));
         });
         // END
 
