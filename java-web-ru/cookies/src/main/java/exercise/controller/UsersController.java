@@ -1,5 +1,6 @@
 package exercise.controller;
 
+import static io.javalin.rendering.template.TemplateUtil.model;
 import exercise.dto.users.UserPage;
 import exercise.model.User;
 import exercise.repository.UserRepository;
