@@ -22,7 +22,7 @@ public final class App {
 
         app.post(NamedRoutes.loginPath(), SessionsController::create);
 
-        app.delete(NamedRoutes.logoutPath(), SessionsController::destroy);
+        app.post(NamedRoutes.logoutPath(), SessionsController::destroy);
         // END
 
         return app;
