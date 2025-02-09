@@ -31,7 +31,7 @@ public final class App {
         // BEGIN
         app.after(ctx -> ctx.header(
                 "X-Response-Digest",
-                DigestUtils.sha256Hex(ctx.body())));
+                DigestUtils.sha256Hex(ctx.result())));
         // END
 
         return app;
