@@ -12,4 +12,5 @@ content = @`
     @else
         <a href="${NamedRoutes.buildSessionPath()}">Войти</a>
     @endif
-'
+`
+)

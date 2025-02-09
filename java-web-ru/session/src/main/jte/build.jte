@@ -16,3 +16,5 @@ content = @`
     <input type="password" placeholder="Password" name="password" />
     <input type="submit" />
 </form>
+`
+)
