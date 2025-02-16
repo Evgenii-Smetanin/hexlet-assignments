@@ -1,9 +1,9 @@
 <!-- BEGIN -->
 @import exercise.util.NamedRoutes
-@import exercise.dto.BasePage // Импортируем базовый класс
+@import exercise.dto.BasePage
 @import gg.jte.Content
 @param Content content
-@param BasePage page = null // Если не передали, то игнорируем
+@param BasePage page = null
 
 <!doctype html>
 <html lang="en">
