@@ -24,8 +24,9 @@ public class PostsController {
         var body = ctx.formParam("body");
 
         try {
-            var name = ctx.formParam("name")
-                    .check(val -> val.length() > 1, "Название не должно быть короче двух символов");
+            var name = ctx.formParamAsClass("name", String.class)
+                    .check(val -> val.length() > 1, "Название не должно быть короче двух символов")
+                    .get();
             var post = new Post(name, body);
             PostRepository.save(post);
             ctx.sessionAttribute("flash", "Post was successfully created!");
