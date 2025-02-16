@@ -3,7 +3,7 @@
 @import exercise.dto.BasePage
 @import gg.jte.Content
 @param Content content
-@param BasePage page = null
+@param BasePage page
 
 <!doctype html>
 <html lang="en">
