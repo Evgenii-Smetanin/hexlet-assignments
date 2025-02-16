@@ -3,9 +3,8 @@
 @import exercise.dto.BasePage
 @import gg.jte.Content
 @param Content content
-@param BasePage page
+@param BasePage page = null
 
-<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
